@@ -17,7 +17,7 @@ const map = new Map({
   view: new View({
     center: fromLonLat([19.699, 48.669]),
     zoom: 7,
-    rotate: 0.5 //radians
+    rotate: 0.5 
   }),
   layers: [
     new TileLayer({
@@ -30,7 +30,7 @@ const map = new Map({
   new FullScreen(),
   new MousePosition(),
   new OverviewMap({
-    collapsed: false, // overViewMap bude otvorená aj po znovuotvorení webu
+    collapsed: false, 
     layers: [
       new TileLayer({
         source: new OSM()
@@ -42,11 +42,8 @@ const map = new Map({
   ]
 })
 
-// defaultné hodnoty
 import { defaults as defaultControls } from 'ol/control';
 console.log(defaultControls());
-
-
 
 const popupContainerElement = document.getElementById("popup-coordinates")
 
@@ -82,14 +79,13 @@ const drawInteraction = new Draw({
 })
 map.addInteraction(drawInteraction)
 
-// Po dokreslení Poly mi v konzole vypíše súradnice
+
 drawInteraction.on("drawend", (e) => {
   let parser = new GeoJSON()
-  let drawnFeatures = parser.writeFeature(e.feature) //aj toto sa dá použiť writeFeatureObject
+  let drawnFeatures = parser.writeFeature(e.feature) 
   console.log(drawnFeatures);
 })
 
 //Map Controls
 // nastavuje sa v Map
 
-// Vytvor nový projekt a mapu pre rastrové mapy
