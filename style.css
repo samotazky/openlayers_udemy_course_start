@@ -17,3 +17,13 @@ html, body {
 }
 
 
+.ol-mouse-position {
+  margin-right: 50px;
+  background: white;
+  color: black;
+  padding: 5px 10px;
+}
+
+.ol-scale-line {
+  margin-left: 180px;
+}
